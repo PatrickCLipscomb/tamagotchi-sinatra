@@ -60,24 +60,21 @@ class Tamagotchi
       Time.new() - @age
     end
   end
-  define_method(:feed) do
-    if @food < 9
-      @food += 2
-    else
+  define_method(:feed) do |noms|
+    @food += noms
+    if @food > 10
       @food = 10
     end
   end
-  define_method(:sleep) do
-    if @rest < 9
-      @rest += 2
-    else
+  define_method(:sleep) do |zzs|
+    @rest += zzs
+    if @rest > 10
       @rest = 10
     end
   end
-  define_method(:play) do
-    if @play < 9
-      @play += 2
-    else
+  define_method(:play) do |gigs|
+    @play += gigs
+    if @play > 10
       @play = 10
     end
   end

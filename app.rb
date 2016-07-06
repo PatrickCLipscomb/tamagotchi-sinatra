@@ -22,13 +22,27 @@ post('/alive') do
   @tama_farm.each() do |tama|
     if tama.name() == name
       @current_tama = tama
-    else
-      'No Tamagotchi with that name!'
+      @current_tama.prepare()
     end
   end
   erb(:alive)
 end
 
-get('/feed') do
-  @current_tama.feed()
+post('/feed') do
+  @pick = params.fetch('pick')
+  @current_tama = ''
+  @tama_farm = Tamagotchi.pets()
+  @tama_farm.each() do |tama|
+    if tama.name() == @pick
+      @current_tama = tama
+      @current_tama.prepare()
+    end
+  end
+  food = params.fetch('food').to_i
+  rest = params.fetch('rest').to_i
+  play = params.fetch('play').to_i
+  @current_tama.feed(food)
+  @current_tama.sleep(rest)
+  @current_tama.play(play)
+  erb(:alive)
 end

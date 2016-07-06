@@ -1,9 +1,13 @@
-<% if @current_tama.alive?() %>
-<h1><%= @current_tama.name() %> is still alive!</h1>
+<% if @current_tama.class() == Tamagotchi %>
+  <% if @current_tama.alive?() %>
+  <h1><%= @current_tama.name() %> is still alive!</h1>
+  <h3>Vitals: <%= @current_tama.food() %> food, <%= @current_tama.rest() %> rest, <%= @current_tama.happiness() %> happiness</h3>
+  <% else %>
+  <h1><%= @current_tama.name() %> is DEAD!</h1>
+  <% end %>
 <% else %>
-<h1><%= @current_tama.name() %> is DEAD!</h1>
+  <h1>No Tamagotchi with that name!</h1>
 <% end %>
-
 <p>
   <a href="/">Back</a>
 </p>

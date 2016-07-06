@@ -7,16 +7,38 @@
 </ul>
 <form action="/tamagotchi" method='post'>
   <div class="form-group">
-    <label for="tamagotchi">Name your Tamagotchi</label>
+    <label for="tamagotchi">Create a new Tamagotchi</label>
     <input type="text" class="form-control" name="tamagotchi">
     <button type="submit" name="button" class="btn btn-success">Create!</button>
   </div>
 </form>
 
+<!-- <form action="/remove" method='post'>
+  <div class="form-group">
+    <label for="removal">Create a new Tamagotchi</label>
+    <input type="text" class="form-control" name="tamagotchi">
+    <button type="submit" name="button" class="btn btn-success">Create!</button>
+  </div>
+</form> -->
+
 <form action="/alive" method="post">
   <div class="form-group">
-    <label for="alive">Which Tamagotchi?</label>
+    <label for="alive">Pick your Tamagotchi to check on.</label>
     <input type="text" class="form-control" name="alive">
     <button type="submit" name="button" class="btn btn-success">Still Alive?</button>
+  </div>
+</form>
+
+<form action="/feed" method="post">
+  <div class="form-group">
+    <label for="pick">Which Tamagotchi?</label>
+    <input type="text" class="form-control" name="pick">
+    <label for="food">How much food to feed?</label>
+    <input type="number" class="form-control" name="food">
+    <label for="rest">How much rest to provide?</label>
+    <input type="number" class="form-control" name="rest">
+    <label for="play">How much play to provide?</label>
+    <input type="number" class="form-control" name="play">
+    <button type="submit" name="button" class="btn btn-success">Pump your Tamagotchi up!</button>
   </div>
 </form>
