@@ -1,0 +1,9 @@
+<% if @current_tama.alive?() %>
+<h1><%= @current_tama.name() %> is still alive!</h1>
+<% else %>
+<h1><%= @current_tama.name() %> is DEAD!</h1>
+<% end %>
+
+<p>
+  <a href="/">Back</a>
+</p>

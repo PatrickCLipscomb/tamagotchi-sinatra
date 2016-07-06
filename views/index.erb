@@ -1,8 +1,22 @@
 <h1>Tamagotchi Farm</h1>
-<form action="/index">
+
+<ul>
+  <% @tama_farm.each() do |tama| %>
+    <li><%= tama.name() %></li>
+  <% end %>
+</ul>
+<form action="/tamagotchi" method='post'>
   <div class="form-group">
     <label for="tamagotchi">Name your Tamagotchi</label>
-    <input type="text" name="tamagotchi">
+    <input type="text" class="form-control" name="tamagotchi">
+    <button type="submit" name="button" class="btn btn-success">Create!</button>
   </div>
-  <button type="submit" name="button"></button>
+</form>
+
+<form action="/alive" method="post">
+  <div class="form-group">
+    <label for="alive">Which Tamagotchi?</label>
+    <input type="text" class="form-control" name="alive">
+    <button type="submit" name="button" class="btn btn-success">Still Alive?</button>
+  </div>
 </form>
